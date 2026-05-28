@@ -3,12 +3,15 @@ version: '3.5'
 services:
   airprint:
     container_name: airprint
-    build: https://github.com/bennytheshap/synology-airprint.git
+    image: bennytheshap/synology-airprint:latest
     restart: always
     network_mode: "host"
     environment:
+      TZ: America/Los_Angeles
+      AVAHI_HOSTNAME: cups-airprint
       CUPSADMIN: admin
       CUPSPASSWORD: admin
     volumes:
       - "./services:/services"
       - "./config:/config"
+      - "/var/run/dbus:/var/run/dbus"
