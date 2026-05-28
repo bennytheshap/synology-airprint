@@ -28,9 +28,9 @@ RUN apt-get update && apt-get install -y \
 	wget \
 	rsync 
 
-RUN dpkg --add-architecture i386
+RUN dpkg --add-architecture i386 && apt update
 
-RUN apt-get install -y ia32-libs lib32stdc++6 
+RUN apt-get install -y lib32stdc++6 lib32z1 libc6:i386
 
 RUN wget https://download.brother.com/welcome/dlf005879/cupswrapperHL2240-2.0.4-2.i386.deb
 
