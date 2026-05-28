@@ -1,5 +1,4 @@
 FROM ubuntu:jammy
-LABEL maintainer="znetwork@me.com"
 LABEL version="0.3"
 LABEL description="AIRPRINT FROM SYNOLOGY DSM 7 (HP, SAMSUNG, ETC)"
 
@@ -26,7 +25,6 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	python3-cups \
 	wget \
-	printer-driver-brlaser \ 
 	rsync 
 
 RUN dpkg --add-architecture i386 && apt update
