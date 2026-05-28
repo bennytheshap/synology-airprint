@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	python3-cups \
 	wget \
+	printer-driver-brlaser \ 
 	rsync 
 
 RUN dpkg --add-architecture i386 && apt update
@@ -35,6 +36,10 @@ RUN apt-get install -y lib32stdc++6 lib32z1 libc6:i386
 RUN wget https://download.brother.com/welcome/dlf005879/cupswrapperHL2240-2.0.4-2.i386.deb
 
 RUN dpkg -i cupswrapperHL2240-2.0.4-2.i386.deb
+
+RUN wget https://download.brother.com/welcome/dlf101123/brgenml1lpr-3.1.0-1.i386.deb
+
+RUN dpkg -i brgenml1lpr-3.1.0-1.i386.deb
 
 RUN  rm -rf /var/lib/apt/lists/*
 
