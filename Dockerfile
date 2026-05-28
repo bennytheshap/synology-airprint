@@ -26,8 +26,15 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	python3-cups \
 	wget \
-	rsync \
-	&& rm -rf /var/lib/apt/lists/*
+	rsync 
+
+RUN dpkg --add-architecture i386
+
+RUN wget https://download.brother.com/welcome/dlf005879/cupswrapperHL2240-2.0.4-2.i386.deb
+
+RUN dpkg -i cupswrapperHL2240-2.0.4-2.i386.deb
+
+RUN  rm -rf /var/lib/apt/lists/*
 
 # This will use port 631
 EXPOSE 631
