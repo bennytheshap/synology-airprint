@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN dpkg --add-architecture i386
 
+RUN apt-get install -y ia32-libs lib32stdc++6 
+
 RUN wget https://download.brother.com/welcome/dlf005879/cupswrapperHL2240-2.0.4-2.i386.deb
 
 RUN dpkg -i cupswrapperHL2240-2.0.4-2.i386.deb
